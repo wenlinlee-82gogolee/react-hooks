@@ -3,6 +3,7 @@ import Accordion from './components/Accordion';
 import Counter from './components/Counter';
 import Search from './components/Search';
 import Dropdown from './components/Dropdown';
+import Translate from './components/Translate';
 
 const items = [
   {
@@ -19,6 +20,7 @@ const items = [
   },
 ];
 
+/////////for the dropdown widget
 const options = [
   {
     label: 'The color Red',
@@ -36,25 +38,28 @@ const options = [
 
 export default () => {
   //create a state for dropdown
-  const [selected, setSelected] = useState(options[0]);
-  const [showDropdown, setShowDropdown] = useState(true);
+  //   const [selected, setSelected] = useState(options[0]);
+  //   const [showDropdown, setShowDropdown] = useState(true);
   return (
     <div>
       {/*         
       <Accordion items={items} />
       <Counter /> 
             <Search />
-      */}
       <button onClick={() => setShowDropdown(!showDropdown)}>
         Toggle Dropdown
       </button>
       {showDropdown ? (
         <Dropdown
+          label="Select a color"
           selected={selected}
           onSelectedChange={setSelected}
           options={options}
         />
       ) : null}
+      */}
+
+      <Translate />
     </div>
   );
 };
